@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1> details of {{book.title}}</h1>
+<a href="{% url 'book_update' book.id %}">Update</a>
+<a href="{% url 'book_delete' book.id %}">Delete</a>
+
+{% endblock%}
