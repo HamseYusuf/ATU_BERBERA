@@ -1,14 +1,31 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1> Book list </h1>
-    {% for book in books %}
-    <ul>
-        <li>{{book.title}}</li>
-        <li>{{book.author}}</li>
-        <li>{{book.price}}</li>
-        <li> <a href="{% url 'book_detail' book.id %}"> Read more...</a></li>
-    </ul>
+    <h1 class="text-center fw-bold"> Book list </h1>
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th> Author</th>
+                <th>Book title </th>
+                <th>Published date </th>
+                <th> Price </th>
+            </tr>
+        </thead>
+        <tbody>
+            <th>
+                {% for book in books %}
 
-    {% endfor %}
+                <tr>
+                    <td>
+                        {{book.author}}
+                    </td>
+                    <td> {{book.title}}</td>
+                    <td>{{book.publication_date}}</td>
+                    <td>{{book.price}}</td>
+                </tr>
+                 {% endfor %}
+            </th>
+        </tbody>
+    </table>
+    
     
 {% endblock %}

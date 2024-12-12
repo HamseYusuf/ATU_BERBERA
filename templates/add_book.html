@@ -2,18 +2,24 @@
 
 {% block content %}
 
-<form method="post">
-    {% csrf_token %}
-    <label for=""> title </label>
-    <input type="text" name="title">
-    <label for=""> author </label>
-    <input type="text" name="author">
-    <label for=""> Published date </label>
-    <input type="date" name="published_date">
-    <label for=""> Price </label>
-    <input type="number" name="price">
-    <input type="submit" value="submit">
-</form>
+<div class="container">
+    <div class="row flex justify-content-center">
+        <div class="col-6">
+            <form method="post" class="form-group">
+                {% csrf_token %}
+                <label class="form-label" for=""> title </label>
+                <input class="form-control" type="text" name="title">
+                <label class="form-label" for=""> author </label>
+                <input class="form-control" type="text" name="author">
+                <label class="form-label" for=""> Published date </label>
+                <input class="form-control" type="date" name="published_date">
+                <label class="form-label" for=""> Price </label>
+                <input class="form-control" type="number" name="price">
+                <input class="form-control btn btn-primary" type="submit" value="submit">
+            </form>
+        </div>
+    </div>
+</div>
 
 
 {% endblock %}
